@@ -1,0 +1,14 @@
+﻿@page
+@using NorthwindHCI.NW
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var categories = ViewData["Categories"] as List<Category>;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @foreach (var item in categories!) {
+        <p>@item.CategoryName</p>
+    }
+</div>
