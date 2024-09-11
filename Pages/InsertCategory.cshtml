@@ -1,0 +1,27 @@
+﻿@page
+@model NorthwindHCI.Pages.InsertCategoryModel
+@{
+    var message = ViewData["Message"] as string;
+}
+
+<div>
+    <form method="post">
+        <h2>Create and insert a new Category!</h2>
+        <div class="form-group">
+            <label asp-for="@Model.Category_Name">Name</label>
+            <input asp-for="@Model.Category_Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.CategoryDescription">Description</label>
+            <input asp-for="@Model.CategoryDescription" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <div class="alert alert-success" role="alert">
+                @message
+            </div>
+        }
+    </form>
+</div>
