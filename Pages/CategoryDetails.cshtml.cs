@@ -13,7 +13,7 @@ namespace NorthwindHCI.Pages
             _context = new();
         }
 
-        public void OnGet(int id)
+        public void OnGet(int categoryIndex)
         {
             var categories = _context.Categories
             .OrderBy(c => c.CategoryId)
@@ -22,7 +22,7 @@ namespace NorthwindHCI.Pages
                 CategoryId = c.CategoryId,
                 Description = c.Description
             });
-            ViewData["Category"] = categories.ToList()[id - 1];
+            ViewData["Category"] = categories.ToList()[categoryIndex];
         }
     }
 }

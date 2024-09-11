@@ -23,8 +23,5 @@ public class IndexModel : PageModel
                 CategoryId = c.CategoryId
             });
         ViewData["Categories"] = categories.ToList();
-        foreach (Category item in categories) {
-            Console.WriteLine($"{item.CategoryId}\t{item.CategoryName}");
-        };
     }
 }
