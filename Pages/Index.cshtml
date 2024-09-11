@@ -4,12 +4,14 @@
 @{
     ViewData["Title"] = "Home page";
     var categories = ViewData["Categories"] as List<Category>;
+    var i = 1;
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <h2>Click on any of the following to go to the details page:</h2>
     @foreach (var item in categories!) {
-        <p><a href="">@item.CategoryName</a></p>
+        <p><a asp-page="/CategoryDetails" asp-route-id="@i">@item.CategoryName</a></p>
+        i++;
     }
 </div>

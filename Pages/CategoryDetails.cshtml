@@ -1,0 +1,14 @@
+﻿@page
+@using NorthwindHCI.NW
+@model NorthwindHCI.Pages.CategoryDetailsModel
+@{
+    var category = ViewData["Category"] as Category;
+    ViewData["Title"] = "Details Page";
+}
+
+<div>
+    <h2> @category!.CategoryName Details</h2>
+    <p>ID: @category.CategoryId</p>
+    <h3>Description:</h3>
+    <p>@category.Description</p>
+</div>
